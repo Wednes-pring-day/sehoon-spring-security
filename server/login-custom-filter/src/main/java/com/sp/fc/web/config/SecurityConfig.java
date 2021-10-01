@@ -34,7 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         CustomLoginFilter filter = new CustomLoginFilter(authenticationManager());
         http
                 .authorizeRequests(request->
-                        request.antMatchers("/").permitAll()
+                        request.antMatchers("/", "/login").permitAll()
                         .anyRequest().authenticated()
                 )
 //        .formLogin(
